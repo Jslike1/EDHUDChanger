@@ -12,19 +12,11 @@ namespace EDHUDChanger.Class
     {
 
 
-        //public string connectionString = @"C:\Program Files (x86)\Steam\steamapps\common\Elite Dangerous\Products\elite-dangerous-64\GraphicsConfiguration.xml";
-
         public string connectionString = System.Configuration.ConfigurationManager.AppSettings["EDDirectory"];
-
-        //System.Configuration.ConfigurationManager.ConnectionStrings["EDDirectory"].ConnectionString;
-
-
 
         public int counter = 1;
 
-        //@"C:\Program Files (x86)\Steam\steamapps\common\Elite Dangerous\Products\elite-dangerous-64.GraphicsConfiguration.XML";
-
-        public void ChangeHUDColor()
+        public void ChangeHUDColour(Colour colour)
         {
 
             try
@@ -32,17 +24,20 @@ namespace EDHUDChanger.Class
 
                 string[] arrLine = File.ReadAllLines(connectionString);
 
-                arrLine[49] = "			<MatrixRed>		0, 0, 1 </MatrixRed>";
-                arrLine[50] = "			<MatrixGreen>	0, 1, 0 </MatrixGreen>";
-                arrLine[51] = "			<MatrixBlue>	1, 0, 0 </MatrixBlue>";
+                arrLine[49] = $"			<MatrixRed>		{colour.Red} </MatrixRed>";
+                arrLine[50] = $"			<MatrixGreen>	{colour.Green} </MatrixGreen>";
+                arrLine[51] = $"			<MatrixBlue>	{colour.Blue} </MatrixBlue>";
 
                 File.WriteAllLines(connectionString, arrLine);
-           
+                MessageBox.Show("Successfully wrote file.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.None);
+
+
             }
             catch (IOException ex)
             {
-                MessageBox.Show(ex.Message, "Some title", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
 
 
 

@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\Colour.cs" />
     <Compile Include="Class\FileReaderWriter.cs" />
     <Compile Include="EDHUDChanger.cs">
       <SubType>Form</SubType>
@@ -81,6 +82,10 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\LemonChiffonDarkOrange.jpg" />
+    <Content Include="Images\LemonChiffonDarkOrangeMordu.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
