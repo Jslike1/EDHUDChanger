@@ -28,8 +28,7 @@ namespace EDHUDChanger
 
 
         private void button1_Click(object sender, EventArgs e)
-        {
-            set = "Default";
+        { 
             ChangeHUD();
         }
 
@@ -76,6 +75,37 @@ namespace EDHUDChanger
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            set = "Default";
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            set = "LemonChiffonDarkOrange";
+            pictureBox1.ImageLocation = @"images\LemonChiffonDarkOrange.jpg";
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            set = "CyanDeepSkyBlueKhakiGold";
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            set = "IvorySkyBlue";
+        }
+
+        private void radioButton5_CheckedChanged(object sender, EventArgs e)
+        {
+            set = "LightCyanDodgerBlue";
         }
     }
 }
