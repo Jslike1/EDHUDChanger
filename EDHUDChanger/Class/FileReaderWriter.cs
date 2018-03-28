@@ -24,7 +24,7 @@ namespace EDHUDChanger.Class
 
                 string[] arrLine = File.ReadAllLines(connectionString);
 
-                arrLine[49] = $"			<MatrixRed>		{colour.Red} </MatrixRed>";
+                arrLine[49] = $"			<MatrixRed>	{colour.Red} </MatrixRed>";
                 arrLine[50] = $"			<MatrixGreen>	{colour.Green} </MatrixGreen>";
                 arrLine[51] = $"			<MatrixBlue>	{colour.Blue} </MatrixBlue>";
 
